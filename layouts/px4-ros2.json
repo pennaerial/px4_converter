@@ -1,0 +1,102 @@
+{
+  "configById": {
+    "3D!px4flight": {
+      "scene": {
+        "transforms": {
+          "visible": true,
+          "showLabel": true,
+          "axisSize": 1,
+          "lineWidth": 1,
+          "enablePreloading": true
+        }
+      },
+      "transforms": {
+        "frame:uav_0/local_origin": {
+          "visible": false
+        },
+        "frame:uav_0/position": {
+          "visible": false
+        },
+        "frame:uav_0/base_link": {
+          "visible": true
+        }
+      },
+      "layers": {
+        "px4-grid": {
+          "visible": true,
+          "instanceId": "px4-grid",
+          "layerId": "foxglove.Grid",
+          "label": "Local ENU grid (1 m)",
+          "order": 0,
+          "frameId": "uav_0/local_origin",
+          "size": 20,
+          "divisions": 20,
+          "lineWidth": 1,
+          "color": "#526777",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      },
+      "topics": {
+        "/uav_0/fmu/out/vehicle_local_position_v1": {
+          "visible": true,
+          "convertTo": "foxglove.SceneUpdate"
+        }
+      },
+      "cameraState": {
+        "distance": 5,
+        "perspective": true,
+        "phi": 60,
+        "targetOffset": [
+          0,
+          0,
+          0
+        ],
+        "thetaOffset": 45,
+        "fovy": 45,
+        "near": 0.05,
+        "far": 5000
+      },
+      "followTf": "uav_0/base_link",
+      "fixedFrame": "uav_0/local_origin",
+      "followMode": "follow-position",
+      "foxglovePanelTitle": "PX4 attitude and local flight path"
+    },
+    "map!px4flight": {
+      "disabledTopics": [],
+      "followTopic": "/uav_0/fmu/out/vehicle_global_position",
+      "layer": "map",
+      "topicColors": {
+        "/uav_0/fmu/out/vehicle_global_position": "#19ccE6"
+      },
+      "zoomLevel": 18,
+      "topicConfig": {
+        "/uav_0/fmu/out/vehicle_global_position": {
+          "historyMode": "previous",
+          "pointDisplayMode": "dot",
+          "pointSize": 5
+        }
+      },
+      "foxglovePanelTitle": "PX4 geographic track"
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": {
+    "first": "3D!px4flight",
+    "second": "map!px4flight",
+    "direction": "row",
+    "splitPercentage": 65
+  }
+}

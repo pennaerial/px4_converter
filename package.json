@@ -1,10 +1,10 @@
 {
-  "name": "px4Converter",
-  "displayName": "px4Converter",
-  "description": "PX4 Converter extension that translates px4 messages to Foxglove schemas to visualize data in various panel types",
-  "publisher": "Foxglove",
-  "homepage": "https://github.com/foxglove/px4_converter",
-  "version": "0.1.0",
+  "name": "px4-ros2-converter",
+  "displayName": "PennAIR PX4 ROS 2 Converter",
+  "description": "Visualize PX4 ROS 2 bags with attitude, local position, a flight trail, and a geographic map.",
+  "publisher": "pennair",
+  "homepage": "https://github.com/pennaerial/px4_converter",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "./dist/extension.js",
   "keywords": [],
@@ -15,8 +15,9 @@
     "lint:ci": "eslint .",
     "lint:fix": "eslint --fix .",
     "local-install": "foxglove-extension install",
-    "package": "foxglove-extension package -o dist/px4-converter-$npm_package_version.foxe",
-    "pretest": "foxglove-extension pretest"
+    "package": "foxglove-extension package -o dist/px4-ros2-converter-$npm_package_version.foxe",
+    "test": "tsc -p tsconfig.test.json && node --test tests/*.test.cjs",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@foxglove/eslint-plugin": "2.1.0",

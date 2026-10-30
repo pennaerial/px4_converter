@@ -1,6 +1,7 @@
 import { ExtensionContext } from "@foxglove/extension";
 import { FrameTransform, LocationFix, PosesInFrame } from "@foxglove/schemas";
 
+import { registerRos2Converters } from "./ros2Converters";
 import type { VehicleAttitude, VehicleGlobalPosition, VehicleLocalPosition } from "./types";
 import {
   buildPositionCovariance,
@@ -12,6 +13,7 @@ import {
 } from "./utils";
 
 export function activate(extensionContext: ExtensionContext): void {
+  registerRos2Converters(extensionContext);
   extensionContext.registerMessageConverter<VehicleGlobalPosition>({
     type: "schema",
     fromSchemaName: "vehicle_global_position",
